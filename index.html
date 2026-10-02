@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your personal browser workspace, powered by Scramjet.">
+  <meta name="color-scheme" content="dark">
+  <title>Orbit Browser</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/scram/scramjet.all.js" defer></script>
+  <script src="/baremux/index.js" defer></script>
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <header class="chrome">
+    <div class="tabline">
+      <a class="brand" href="/" aria-label="Orbit home"><img src="/icon.svg" alt="" width="28" height="28"><span>ORBIT</span></a>
+      <div id="tabs" class="tabs" role="tablist" aria-label="Browser tabs"></div>
+      <button id="new-tab" class="icon-button" aria-label="New tab" title="New tab">+</button>
+      <button id="help" class="icon-button" aria-label="About Orbit" title="About Orbit">?</button>
+    </div>
+    <div class="toolbar">
+      <div class="nav-buttons">
+        <button id="back" class="icon-button" aria-label="Back" title="Back">←</button>
+        <button id="forward" class="icon-button" aria-label="Forward" title="Forward">→</button>
+        <button id="reload" class="icon-button" aria-label="Reload page" title="Reload page">↻</button>
+        <button id="home" class="icon-button" aria-label="Home" title="Home">⌂</button>
+      </div>
+      <form id="address-form" class="address-form">
+        <span class="address-mark" aria-hidden="true">◎</span>
+        <input id="address" aria-label="Web address or search" autocomplete="off" spellcheck="false" placeholder="Search or enter a web address" disabled>
+        <button class="go" type="submit" disabled>Go</button>
+      </form>
+    </div>
+  </header>
+  <div id="message" class="message" role="status" hidden></div>
+  <main id="workspace">
+    <section id="start" class="start">
+      <div class="start-inner">
+        <div class="eyebrow">YOUR BROWSER WORKSPACE</div>
+        <h1>A little space<br>for the web<span>.</span></h1>
+        <form id="search-form" class="search-form">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" aria-label="Search the web or enter a URL" placeholder="Where do you want to go?" autocomplete="off" spellcheck="false" disabled>
+          <button type="submit" disabled>Browse</button>
+        </form>
+        <div class="shortcuts" aria-label="Shortcuts">
+          <button data-url="https://www.google.com/"><span class="shortcut-icon">G</span>Google</button>
+          <button data-url="https://en.wikipedia.org/"><span class="shortcut-icon">W</span>Wikipedia</button>
+          <button data-url="https://www.youtube.com/"><span class="shortcut-icon">▶</span>YouTube</button>
+        </div>
+        <p class="start-note">Enter a website above. Pages open right here.</p>
+      </div>
+      <footer><span>ORBIT / 01</span><span>Powered by Scramjet</span></footer>
+    </section>
+    <div id="frames"></div>
+  </main>
+  <dialog id="about">
+    <form method="dialog"><button class="close-dialog" aria-label="Close">×</button></form>
+    <div class="eyebrow">ABOUT THIS WORKSPACE</div>
+    <h2>Orbit Browser</h2>
+    <p>Websites load through your server using Scramjet. Use the address bar to search or visit a website, and + to open another tab.</p>
+    <p>Some websites, sign-ins, downloads, and pop-ups may not work. A managed device or network can still block or monitor access.</p>
+    <p>Closing a tab does not erase site data. Clear browsing data to remove this workspace’s stored website data and sign out.</p>
+    <button id="clear-data" class="action">Clear browsing data &amp; sign out</button>
+    <p class="small"><a href="/credits.html" target="_blank" rel="noopener noreferrer">Source code &amp; credits</a></p>
+  </dialog>
+  <noscript>This browser needs JavaScript enabled.</noscript>
+</body>
+</html>
