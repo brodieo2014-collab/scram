@@ -1,0 +1,17 @@
+{
+  "name": "orbit-browser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A standalone browser-in-a-browser powered by Scramjet and a private Wisp relay.",
+  "engines": { "node": ">=22 <25" },
+  "scripts": { "start": "node server.mjs", "check": "node --check server.mjs && node --check public/app.js && node --check public/sw.js" },
+  "dependencies": {
+    "@fastify/static": "10.1.5",
+    "@mercuryworkshop/bare-mux": "2.1.9",
+    "@mercuryworkshop/libcurl-transport": "1.5.2",
+    "@mercuryworkshop/scramjet": "https://github.com/MercuryWorkshop/scramjet/releases/download/v1.1.0/mercuryworkshop-scramjet-1.1.0.tgz",
+    "@mercuryworkshop/wisp-js": "0.4.1",
+    "fastify": "5.12.5"
+  }
+}
